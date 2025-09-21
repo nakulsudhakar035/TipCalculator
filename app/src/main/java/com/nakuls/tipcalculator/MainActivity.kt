@@ -53,9 +53,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TipCalculatorTheme {
-                Surface (
-
-                ){
+                Surface {
                     TipLayout()
                 }
             }
