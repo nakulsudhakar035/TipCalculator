@@ -20,7 +20,11 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      # No need to install Android SDK manually, it's already there
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          # Optional: specify SDK components to install
+          components: "platform-tools,build-tools;34.0.0,platforms;android-34"
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
@@ -31,7 +35,6 @@ jobs:
       - name: Run tests
         run: ./gradlew test
 
-      # Optional: Upload APK as artifact
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
