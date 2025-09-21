@@ -24,9 +24,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      # 3. Install Android SDK
-      - name: Install Android SDK
-        uses: r0adkll/install-android-sdk@v2
+      # 3. Install Android SDK (using the correct action)
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
 
       # 4. Make Gradle executable
       - name: Make gradlew executable
